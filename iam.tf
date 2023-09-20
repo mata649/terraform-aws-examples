@@ -15,3 +15,7 @@ module "iam_users" {
   developers_group_name = module.iam_groups.developers_group_name
   sells_group_name      = module.iam_groups.sells_group_name
 }
+
+module "iam_roles" {
+  source = "./IAM/roles"
+}
