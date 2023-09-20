@@ -1,9 +1,17 @@
 module "iam_groups" {
   source = "./IAM/group"
 }
+
+module "iam_policies" {
+  source                = "./IAM/policies"
+  depends_on            = [module.iam_groups]
+  developers_group_name = module.iam_groups.developers_group_name
+  sells_group_name      = module.iam_groups.sells_group_name
+
+}
 module "iam_users" {
-  source = "./IAM/users"
-  depends_on = [ module.iam_groups ]
-  testing_group_1 = module.iam_groups.testing_group_1
-  testing_group_2 = module.iam_groups.testing_group_2
+  source                = "./IAM/users"
+  depends_on            = [module.iam_groups]
+  developers_group_name = module.iam_groups.developers_group_name
+  sells_group_name      = module.iam_groups.sells_group_name
 }

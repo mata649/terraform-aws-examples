@@ -1,6 +1,6 @@
-output "testing_group_1" {
-  value = aws_iam_group.testing_group_1.name
+output "developers_group_name" {
+  value = aws_iam_group.developers.name
 }
-output "testing_group_2" {
-  value = aws_iam_group.testing_group_2.name
+output "sells_group_name" {
+  value = aws_iam_group.sells.name
 }
