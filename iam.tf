@@ -21,6 +21,6 @@
 #   sells_group_name      = local.sells_group_name
 # }
 
-# module "iam_roles" {
-#   source = "./modules/IAM/roles"
-# }
+module "iam_roles" {
+  source = "./modules/IAM/roles"
+}
